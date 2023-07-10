@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>2023 Calendar</title>
+  <link rel="stylesheet" href="css/schedule.css">
+</head>
+<body>
+    <div class="centered-content">
+        <h1>sharing</h1>
+    </div>
+    <table class="calendar">
+      <tr>
+        <th>日</th>
+        <th>月</th>
+        <th>火</th>
+        <th>水</th>
+        <th>木</th>
+        <th>金</th>
+        <th>土</th>
+      </tr>
+      <tr class="day" id="day-row">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td onclick="openModal()">1</td>
+        <td onclick="openModal()">2</td>
+        <td onclick="openModal()">3</td>
+      </tr>
+      <tr class="day">
+        <td onclick="openModal()">4</td>
+        <td onclick="openModal()">5</td>
+        <td onclick="openModal()">6</td>
+        <td onclick="openModal()">7</td>
+        <td onclick="openModal()">8</td>
+        <td onclick="openModal()">9</td>
+        <td onclick="openModal()">10</td>
+      </tr>
+      <tr class="day">
+        <td onclick="openModal()">11</td>
+        <td onclick="openModal()">12</td>
+        <td onclick="openModal()">13</td>
+        <td onclick="openModal()">14</td>
+        <td onclick="openModal()">15</td>
+        <td onclick="openModal()">16</td>
+        <td onclick="openModal()">17</td>
+      </tr>
+      <tr class="day">
+        <td onclick="openModal()">18</td>
+        <td onclick="openModal()">19</td>
+        <td onclick="openModal()">20</td>
+        <td onclick="openModal()">21</td>
+        <td onclick="openModal()">22</td>
+        <td onclick="openModal()">23</td>
+        <td onclick="openModal()">24</td>
+      </tr>
+      <tr class="day">
+        <td onclick="openModal()">25</td>
+        <td onclick="openModal()">26</td>
+        <td onclick="openModal()">27</td>
+        <td onclick="openModal()">28</td>
+        <td onclick="openModal()">29</td>
+        <td onclick="openModal()">30</td>
+        <td onclick="openModal()">31</td>
+      </tr>
+    </table>
+    <div id="modal" class="modal">
+        <div id="overlay" class="modal-content">
+        <div id="content" class="content">
+
+            <h1 class="numbers">3</h1>
+
+            <div>
+                <textarea type="text" class="input-field" placeholder="入力してね"></textarea>
+            </div>
+        <div class="decision">
+            <button  class="addition" onclick="closeModal()">追加</button>
+        </div>
+        </div>
+        </div>
+    </div>
+    <script src="js/schedule.js"></script>
+</body>
+</html>

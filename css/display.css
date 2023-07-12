@@ -1,0 +1,155 @@
+body {
+    /* background-color: #070da8; */
+}
+.frame {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+.scroll-box {
+    width: 300px;
+    height: 500px;
+    overflow: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    background-color: #ffffff;
+    
+    
+}
+
+.scroll-box::-webkit-scrollbar {
+    width: 5px;
+}
+.scroll-box::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+.scroll-box::-webkit-scrollbar-thumb:vertical {
+    background: #070da8;
+}
+
+.numbers {
+    text-align: center;
+    margin: 0;
+    padding: 55px;
+    color: #070da8;
+    font-size: 20px;
+}
+.letter::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #070da8;
+    margin-top: 5px;
+}
+
+.letter {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    margin-top: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.letter span {
+    margin-left: 5px;
+}
+
+.dust {
+    width: 20px;
+    height: 20px;
+}
+
+.editimage {
+    width: 34px;
+    height: 20px;
+}
+
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 3%;
+}
+
+/* モーダル */
+#overlay{
+  /*　要素を重ねた時の順番　*/
+  z-index:1;
+
+  /*　画面全体を覆う設定　*/
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,0.5);
+
+  /*　画面の中央に要素を表示させる設定　*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* font-size: 50px; */
+
+}
+
+#content {
+  z-index: 6;
+  width: 70%;
+  max-width: 600px;
+  height: 80vh;
+  padding: 1em;
+  background: #fff;
+  border-radius: 30px;
+  margin-left: 11%;
+  margin-top: 20%;
+}
+
+/* .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3%;
+} */
+
+
+.addition {
+  font-size: 15px;
+  color: #ffffff;
+  background-color: #070da8;
+  width: 260px;
+  height: 60px;
+  border-radius: 20px;
+  margin: 0 auto;
+  /* margin-top: 20%; */
+  margin-left: 6%;
+}
+
+/* テキストボックス */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  height: 500px;
+  border: 10px solid #000000;
+}
+
+/* 数字 */
+.number {
+    margin-left: 45%;
+    margin-top: 20%;
+}

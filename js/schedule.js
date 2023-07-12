@@ -14,4 +14,5 @@ document.addEventListener("DOMContentLoaded", function() {
 function closeModal() {
     var modal = document.getElementById("modal");
     modal.style.display = "none";
+    window.location.replace("display.html");
 }

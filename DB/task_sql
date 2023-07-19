@@ -1,0 +1,11 @@
+CREATE TABLE task (
+  task_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  task_detail VARCHAR(255) NOT NULL,
+  date_id INT NOT NULL,
+  user_id INT NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES user(user_id)
+);
+
+INSERT INTO task (task_detail,date_id,user_id)
+VALUES ('前田君夜コンビニ行く',20,1),
+       ('スーパーに買い出しに行く',30,2);

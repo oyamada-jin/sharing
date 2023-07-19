@@ -1,0 +1,12 @@
+CREATE TABLE user (
+  user_id INT PRIMARY KEY AUTO_INCREMENT,
+  user_name VARCHAR(10) NOT NULL,
+  mail VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+);
+
+
+
+INSERT INTO user (user_name, mail, password)
+VALUES ('デモA', 'demoA@gmail.com', 'pass1'),
+       ('デモB', 'demoB@s.2000.ac.jp', 'pass2');

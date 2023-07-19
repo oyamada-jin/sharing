@@ -1,0 +1,11 @@
+phpMyAdminで構築する
+
+DB名：sharingdb  utf8_general_ci
+
+作成順序
+1 user
+2 task
+
+データ追加順序
+1 user
+2 task

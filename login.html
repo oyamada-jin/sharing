@@ -8,18 +8,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <form id="loginForm">
     <div class="register-form">
         <h1 class="title">sharing</h1>
 
         <div>
-        <input type="text" class="input-field" placeholder="メールアドレス">
+        <input type="text" class="input-field" id="email" placeholder="メールアドレス">
         </div>
 
         <div>
-        <input type="text" class="input-field" placeholder="パスワード">
+        <input type="text" class="input-field" id="password" placeholder="パスワード">
         </div>
 
-        <button class="login-button" onclick="login()">ログイン</button>
+        <button class="login-button" type="submit">ログイン</button>
+    </form>
+
+    <div id="errorMessage" style="color: red;"></div>
 
         <div>
         <a href="sinup.html" class="signup-link">アカウントをお持ちでない方</a>

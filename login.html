@@ -11,13 +11,13 @@
     <form id="loginForm">
     <div class="register-form">
         <h1 class="title">sharing</h1>
-
+        
         <div>
-        <input type="text" class="input-field" id="email" placeholder="メールアドレス">
+        <input type="text" class="input-field" id="email" name="email" placeholder="メールアドレス">
         </div>
 
         <div>
-        <input type="text" class="input-field" id="password" placeholder="パスワード">
+        <input type="text" class="input-field" id="password" name="password" placeholder="パスワード">
         </div>
 
         <button class="login-button" type="submit">ログイン</button>
@@ -29,6 +29,11 @@
         <a href="sinup.html" class="signup-link">アカウントをお持ちでない方</a>
         </div>
     </div>
+
+
+    <!-- axiosをCDN経由で読み込む -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <script src="js/login.js"></script>
 </body>
 </html>

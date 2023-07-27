@@ -1,24 +1,30 @@
-// フォーム送信時のイベントを取得
-document.getElementById("loginForm").addEventListener("submit", function (event) {
-    // デフォルトのフォーム送信を防止
-    event.preventDefault();
-  
-    // 入力値を取得
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-  
-    // エラーメッセージをリセット
-    document.getElementById("errorMessage").textContent = "";
-  
-    // 入力チェック
-    if (!email || !password) {
-      displayErrorMessage("メールアドレスとパスワードを入力してください。");
-    } else {
-      window.location.replace("schedule.html");
-    }
-  });
-  
-  // エラーメッセージを表示する関数
-  function displayErrorMessage(message) {
-    document.getElementById("errorMessage").textContent = message;
-  }
+const loginForm = document.getElementById("loginForm");
+const errorMessage = document.getElementById("errorMessage");
+
+loginForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  // PHPファイルにログイン情報を送信
+  axios.post("http://mute-iki-2515.moo.jp/sharing/login.php", { email: email, password: password })
+    .then(response => {
+        console.log(response.data);
+      if (response.data) {
+        // ログイン成功
+        window.location.href = "schedule.html"; // ログイン後のページにリダイレクト
+      } else {
+        // ログイン失敗
+        displayErrorMessage("ログイン情報が間違っています。");
+      }
+    })
+    .catch(error => {
+      alert("Error:", error);
+      displayErrorMessage("サーバーエラーが発生しました。");
+    });
+});
+
+function displayErrorMessage(message) {
+  errorMessage.textContent = message;
+}

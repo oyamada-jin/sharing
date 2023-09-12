@@ -1,30 +1,20 @@
-const loginForm = document.getElementById("loginForm");
-const errorMessage = document.getElementById("errorMessage");
 
-loginForm.addEventListener("submit", function (event) {
-  event.preventDefault();
+function loginClick() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-
-  // PHPファイルにログイン情報を送信
   axios.post("http://mute-iki-2515.moo.jp/sharing/login.php", { email: email, password: password })
     .then(response => {
-        console.log(response.data);
-      if (response.data) {
-        // ログイン成功
-        window.location.href = "schedule.html"; // ログイン後のページにリダイレクト
-      } else {
-        // ログイン失敗
-        displayErrorMessage("ログイン情報が間違っています。");
+      console.log(response.data);
+      if (response.data.success == 0) {
+        window.location.href = "schedule.html";
+      }else if(response.data.success == 1) {
+        document.getElementById("errorMessage").innerText = "パスワードが一致しない";
+      }else if(response.data.success == 2) {
+        document.getElementById("errorMessage").innerText = "メールアドレスが存在しない";
       }
     })
     .catch(error => {
-      alert("Error:", error);
-      displayErrorMessage("サーバーエラーが発生しました。");
+      console.error(error);
     });
-});
-
-function displayErrorMessage(message) {
-  errorMessage.textContent = message;
 }

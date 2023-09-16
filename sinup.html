@@ -12,15 +12,15 @@
         <h1 class="title">sharing</h1>
 
         <div>
-        <input type="text" class="input-field" placeholder="メールアドレス">
+        <input type="text" class="input-field" id="email" placeholder="メールアドレス">
         </div>
 
         <div>
-        <input type="text" class="input-field" placeholder="パスワード">
+        <input type="text" class="input-field" id="password" placeholder="パスワード">
         </div>
 
         <div>
-        <input type="text" class="input-field" placeholder="ユーザー名">
+        <input type="text" class="input-field" id="username" placeholder="ユーザー名">
         </div>
 
 
@@ -30,6 +30,10 @@
         <a href="login.html" class="signup-link">アカウントをお持ちの方</a>
         </div>
     </div>
+
+    <!-- axiosをCDN経由で読み込む -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
     <script src="js/sinup.js"></script>
 </body>
 </html>

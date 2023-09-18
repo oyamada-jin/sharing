@@ -1,7 +1,7 @@
 function sinup(){
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    const username = document.getElementById("username").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let username = document.getElementById("username").value;
 
 
     axios.post("http://mute-iki-2515.moo.jp/sharing/sinup.php", { email: email, password: password, username: username })

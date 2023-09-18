@@ -24,62 +24,68 @@
         <td></td>
         <td></td>
         <td></td>
-        <td onclick="openModal()">1</td>
-        <td onclick="openModal()">2</td>
-        <td onclick="openModal()">3</td>
+        <td onclick="openModal(1)">1</td>
+        <td onclick="openModal(2)">2</td>
+        <td onclick="openModal(3)">3</td>
       </tr>
       <tr class="day">
-        <td onclick="openModal()">4</td>
-        <td onclick="openModal()">5</td>
-        <td onclick="openModal()">6</td>
-        <td onclick="openModal()">7</td>
-        <td onclick="openModal()">8</td>
-        <td onclick="openModal()">9</td>
-        <td onclick="openModal()">10</td>
+        <td onclick="openModal(4)">4</td>
+        <td onclick="openModal(5)">5</td>
+        <td onclick="openModal(6)">6</td>
+        <td onclick="openModal(7)">7</td>
+        <td onclick="openModal(8)">8</td>
+        <td onclick="openModal(9)">9</td>
+        <td onclick="openModal(10)">10</td>
       </tr>
       <tr class="day">
-        <td onclick="openModal()">11</td>
-        <td onclick="openModal()">12</td>
-        <td onclick="openModal()">13</td>
-        <td onclick="openModal()">14</td>
-        <td onclick="openModal()">15</td>
-        <td onclick="openModal()">16</td>
-        <td onclick="openModal()">17</td>
+        <td onclick="openModal(11)">11</td>
+        <td onclick="openModal(12)">12</td>
+        <td onclick="openModal(13)">13</td>
+        <td onclick="openModal(14)">14</td>
+        <td onclick="openModal(15)">15</td>
+        <td onclick="openModal(16)">16</td>
+        <td onclick="openModal(17)">17</td>
       </tr>
       <tr class="day">
-        <td onclick="openModal()">18</td>
-        <td onclick="openModal()">19</td>
-        <td onclick="openModal()">20</td>
-        <td onclick="openModal()">21</td>
-        <td onclick="openModal()">22</td>
-        <td onclick="openModal()">23</td>
-        <td onclick="openModal()">24</td>
+        <td onclick="openModal(18)">18</td>
+        <td onclick="openModal(19)">19</td>
+        <td onclick="openModal(20)">20</td>
+        <td onclick="openModal(21)">21</td>
+        <td onclick="openModal(22)">22</td>
+        <td onclick="openModal(23)">23</td>
+        <td onclick="openModal(24)">24</td>
       </tr>
       <tr class="day">
-        <td onclick="openModal()">25</td>
-        <td onclick="openModal()">26</td>
-        <td onclick="openModal()">27</td>
-        <td onclick="openModal()">28</td>
-        <td onclick="openModal()">29</td>
-        <td onclick="openModal()">30</td>
-        <td onclick="openModal()">31</td>
+        <td onclick="openModal(25)">25</td>
+        <td onclick="openModal(26)">26</td>
+        <td onclick="openModal(27)">27</td>
+        <td onclick="openModal(28)">28</td>
+        <td onclick="openModal(29)">29</td>
+        <td onclick="openModal(30)">30</td>
+        <td onclick="openModal(31)">31</td>
       </tr>
     </table>
     <div id="modal" class="modal">
         <div id="overlay" class="modal-content">
         <div id="content" class="content">
 
-            <h1 class="numbers">3</h1>
+            <h1 class="numbers" id="numbers">3</h1>
 
             <div>
-                <textarea type="text" class="input-field" placeholder="入力してね"></textarea>
+                <textarea type="text" class="input-field" id="input_field" placeholder="入力してね"></textarea>
             </div>
+            <div id="errorMessage" style="color: red;"></div>
         <div class="decision">
             <button  class="addition" onclick="closeModal()">追加</button>
+            <a href="schedule.html" class="addition">戻る</a>
         </div>
         </div>
         </div>
     </div>
+
+    <!-- axiosをCDN経由で読み込む -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <script src="js/schedule.js"></script>
 </body>
 </html>

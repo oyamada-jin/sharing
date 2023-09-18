@@ -1,7 +1,7 @@
 
 function loginClick() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
 
   axios.post("http://mute-iki-2515.moo.jp/sharing/login.php", { email: email, password: password })
     .then(response => {

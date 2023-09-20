@@ -21,10 +21,13 @@ function closeModal() {
 
     let numbers = document.getElementById("numbers").textContent;
 
+    let userId = localStorage.getItem('userId');
+
     if (input_field.trim() !== "") {
     let data = {
-        task_detail: input_field,
+        input_field: input_field,
         date_id: numbers,
+        user_id: userId
     };
 
     

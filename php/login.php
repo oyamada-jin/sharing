@@ -22,11 +22,13 @@ class selectUser {
             
             $user = $stmt->fetch();
 
+            $user_id = $user['user_id'];
+
             if ($user) {
                 // データベースのパスワードと入力されたパスワードを照合
                 if ($password == $user['password']) {
                     // ログイン成功
-                    $response = array('success' => 0);
+                    $response = array('success' => 0, 'user_id' => $user_id);
                     echo json_encode($response);
                     exit();
                 } else {

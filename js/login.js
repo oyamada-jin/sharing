@@ -7,6 +7,10 @@ function loginClick() {
     .then(response => {
       console.log(response.data);
       if (response.data.success == 0) {
+
+        let userId = response.data.user_id; 
+        localStorage.setItem('userId', userId);
+
         window.location.href = "schedule.html";
       }else if(response.data.success == 1) {
         document.getElementById("errorMessage").innerText = "パスワードが一致しない";
@@ -17,4 +21,8 @@ function loginClick() {
     .catch(error => {
       console.error(error);
     });
+
+
 }
+
+

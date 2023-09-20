@@ -15,13 +15,6 @@ class selectUser {
         }
 
         public function schedule($task_detail, $date_id, $user_id) {
-            // 必須フィールドのチェック
-        if (empty($task_detail)) {
-            // 必須フィールドが入力されていない場合、エラーメッセージを返す
-            $response = array('success' => 1, 'error' => '入力されていません。');
-            echo json_encode($response);
-            exit();
-        }
         
         try {
             // データベースに新しいユーザーレコードを挿入
@@ -49,7 +42,7 @@ class selectUser {
     $input = json_decode($inputJSON, TRUE);
     
     $task_detail = $input['input_field']; // フォームから送信されたタスクの詳細
-    $date_id = $input['dayNumber']; // フォームから送信された日付のID
+    $date_id = $input['date_id']; // フォームから送信された日付のID
     $user_id = $input['user_id']; // フォームから送信されたユーザーID
     
     $dataInsert = new selectUser();

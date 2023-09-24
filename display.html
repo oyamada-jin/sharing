@@ -8,8 +8,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
+    <a href="schedule.html">戻る</a>
     <div class="numbers">
-        <h1>3</h1>
+        <h1 id="numbers">3</h1>
     </div>
     <div class="frame">
     <div class="scroll-box">
@@ -43,6 +44,10 @@
     </div>
 
 
+    <div id="errorMessage" style="color: red;"></div>
+    
+     <!-- axiosをCDN経由で読み込む -->
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/schedule.js"></script>
     <script src="js/display.js"></script>
 </body>

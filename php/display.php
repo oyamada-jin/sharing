@@ -25,7 +25,7 @@ class selectUser {
             $data = $stmt->fetchAll(PDO::FETCH_ASSOC); // データベースから取得したデータを連想配列として取得
             
                 // 登録成功メッセージを返す
-                $response = array('success' => 0, 'data' => $data);
+                $response = array('success' => 0, 'task_array' => $data);
                 echo json_encode($response);
                 exit();
             } catch (PDOException $e) {

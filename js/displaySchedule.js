@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-function postModal() {
+function onScheduleClick() {
     let modal = document.getElementById("modal");
     modal.style.display = "none";
 
@@ -32,7 +32,7 @@ function postModal() {
     };
 
     
-    axios.post("http://mute-iki-2515.moo.jp/sharing/schedule.php", data)
+    axios.post("http://mute-iki-2515.moo.jp/sharing/display.php", data)
     .then(response => {
       console.log(response.data);
       if (response.data.success == 0) {

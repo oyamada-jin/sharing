@@ -10,45 +10,37 @@
 <body>
     <a href="schedule.html">戻る</a>
     <div class="numbers">
-        <h1 id="numbers">3</h1>
+        <h1 id="number">3</h1>
     </div>
     <div class="frame">
-    <div class="scroll-box">
-        <div class="content">
+    <div class="scroll-box" id="scroll_box">
+        <div class="content" id="content">
             <div class="letter">
-                <img src="../svg/edit image.svg" alt="編集ボタン" class="editimage" onclick="openModal()">
-                <span>りゅうと夜飲み会taaaaafdfd</span>
-                <img src="../svg/dust.svg" alt="ゴミ箱" class="dust" onclick="showDeleteConfirmation()">
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non magna vitae urna auctor dapibus ac a quam. Pellentesque feugiat luctus tellus ut ullamcorper. Fusce pharetra sem ac urna iaculis, sed fermentum odio ullamcorper. Suspendisse ut pharetra dui. Ut vulputate, ligula sed finibus feugiat, sapien mauris vulputate risus, vitae facilisis orci neque eu arcu. Nullam vestibulum velit turpis, non volutpat lacus accumsan vel. Sed eleifend cursus neque, id gravida lectus.</p>
-            <p>Aliquam varius odio ut iaculis cursus. Vestibulum tincidunt sagittis ex, ac pretium sapien pharetra in. Integer eu faucibus mi. Suspendisse porttitor lobortis leo. Nam dictum ipsum neque, in fringilla orci malesuada et. Etiam ut erat sit amet enim malesuada fringilla. Sed iaculis turpis non lacinia tristique. Integer finibus massa sed facilisis iaculis. Fusce tincidunt nunc sed luctus tincidunt.</p>
-            <p>Donec eget pulvinar est. Morbi viverra nisi eget enim congue iaculis. Mauris vestibulum rhoncus vestibulum. Etiam pharetra finibus massa vitae placerat. Morbi feugiat, est in tincidunt tincidunt, leo mauris convallis ligula, in dignissim purus dolor a urna. Nullam semper, ex et pulvinar malesuada, sem orci tristique felis, vitae finibus nisl velit in enim. Vivamus tempus purus eget metus pulvinar, eget suscipit odio cursus. Nunc eu vulputate velit. Proin id tellus auctor, blandit dolor sed, dignissim nulla.</p>
-            <p>Maecenas vestibulum magna turpis, in interdum ligula posuere id. Quisque id enim sed lacus pretium fermentum vel a metus. Fusce sed elit et sapien semper volutpat non vel tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce fermentum sem eget dui malesuada posuere. Aenean tincidunt aliquam urna, non semper enim vulputate id. Ut tristique justo id dui congue, vitae dignissim dolor dictum.</p>
-            <p>Etiam sit amet fringilla libero, id posuere risus. Ut congue dui in risus cursus vulputate. Aliquam mollis dui nec tellus posuere aliquet. Vivamus eget tristique eros. Nam semper congue enim nec posuere. Proin malesuada nibh ac ex pellentesque, vel scelerisque nunc ultricies. Sed venenatis ante a pharetra faucibus. Pellentesque ultrices tristique lacinia. Curabitur tincidunt massa elit, in volutpat magna pellentesque nec. Fusce eleifend neque in interdum tristique. Praesent iaculis lorem vitae nisl euismod, non rutrum leo bibendum. Sed imperdiet, metus id consectetur varius, urna nunc volutpat velit, eu congue massa metus in odio.</p>
         </div>
     </div>
     </div>
 
     <div id="modal" class="modal">
-        <div id="overlay" class="modal-content">
+        <!-- <div id="overlay" class="modal-content"> -->
         <div id="content" class="content">
-            <h1 class="number">3</h1>
+            <a href="display.html">戻る</a>
+            <h1 class="number" id="numbers">3</h1>
             <div>
-                <textarea type="text" class="input-field" placeholder="入力してね"></textarea>
+                <textarea type="text" class="input-field" id="edit_text"  placeholder="入力してね"></textarea>
             </div>
         <div class="decision">
-            <button  class="addition" onclick="closeModal()">完了</button>
+            <button  class="addition" onclick="updateTask()">完了</button>
         </div>
         </div>
         </div>
-    </div>
+    <!-- </div> -->
 
 
     <div id="errorMessage" style="color: red;"></div>
     
      <!-- axiosをCDN経由で読み込む -->
-     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="js/schedule.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/display.js"></script>
 </body>
 </html>

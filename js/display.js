@@ -32,6 +32,8 @@ function showDeleteConfirmation(taskId) {
               // 削除成功時の処理: タスクの要素を取り除く
               removeTaskElement(taskId);
 
+              updateTaskList();
+
                 // ここでタスクの表示を更新するなどの処理を行うと良いです
             } else if (response.data.success == 1) {
                 // 削除失敗時の処理
@@ -42,6 +44,43 @@ function showDeleteConfirmation(taskId) {
             console.error(error);
         });
 }
+
+
+
+function updateTaskList() {
+  // サーバーからタスクリストを再取得する
+  // 以下はサーバーからのデータを取得して、画面を更新する例
+
+  let yourDateId = localStorage.getItem('dayNumber');
+  axios.post("http://mute-iki-2515.moo.jp/sharing/display.php", { date_id: yourDateId })
+      .then(response => {
+          if (response.data.success == 0) {
+              let content = document.getElementById("content");
+              content.innerHTML = ""; // 既存のタスクをクリア
+              let taskArray = response.data.task_array;
+              taskArray.forEach((task,index) => {
+                  let taskDetail = task.task_detail;
+                  let taskElement = document.createElement("div");
+                  taskElement.classList.add("letter");
+                  taskElement.innerHTML = `
+                      <img src="../svg/edit image.svg" alt="編集ボタン" class="editimage" onclick="(() => { openModal('${taskDetail}'); })()">
+                      <span>${taskDetail}</span>
+                      <img src="../svg/dust.svg" alt="ゴミ箱" class="dust" onclick="showDeleteConfirmation(${index})">
+                  `;
+                  content.appendChild(taskElement);
+              });
+          }
+      })
+      .catch(error => {
+          console.error(error);
+      });
+}
+
+
+
+
+
+
 
 
 // タスク要素を削除する関数
@@ -96,6 +135,7 @@ axios.post("http://mute-iki-2515.moo.jp/sharing/display.php", {date_id: date_id}
       taskArray = response.data.task_array;
          // taskArray内の各タスクに対して処理を行う
       taskArray.forEach((task, index) => {
+        console.log(task);
       let taskDetail = task.task_detail; // タスクの詳細
 
       // 新しい要素を作成し、タスクの詳細を設定
@@ -105,7 +145,7 @@ axios.post("http://mute-iki-2515.moo.jp/sharing/display.php", {date_id: date_id}
       taskElement.innerHTML = `
         <img src="../svg/edit image.svg" alt="編集ボタン" class="editimage" onclick="(() => { openModal('${taskDetail}', ${index}); })()">
         <span>${taskDetail}</span>
-        <img src="../svg/dust.svg" alt="ゴミ箱" class="dust" onclick="showDeleteConfirmation(${index})">
+        <img src="../svg/dust.svg" alt="ゴミ箱" class="dust" onclick="showDeleteConfirmation(${task.task_id})">
       `;
       let content = document.getElementById("content");
       content.appendChild(taskElement);

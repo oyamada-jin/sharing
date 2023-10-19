@@ -1,16 +1,17 @@
 function openModal(dayNumber) {
     let numbers = document.getElementById("numbers");
-    numbers.innerHTML = dayNumber;
-    let modal = document.getElementById("modal");
-    modal.style.display = "block";
+    // numbers.innerHTML = dayNumber;
+    // let modal = document.getElementById("modal");
+    // modal.style.display = "block";
     localStorage.setItem('dayNumber', dayNumber);
+    window.location.href = "display.html";
 }
 
 // ページの読み込み完了時にモーダルを非表示にする
-document.addEventListener("DOMContentLoaded", function() {
-    let modal = document.getElementById("modal");
-    modal.style.display = "none";
-});
+// document.addEventListener("DOMContentLoaded", function() {
+//     let modal = document.getElementById("modal");
+//     modal.style.display = "none";
+// });
 
 
 
